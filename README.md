@@ -1,5 +1,6 @@
 # power-switch
 hold to safely shut down your pi
+
 I started from https://scribles.net/adding-power-switch-on-raspberry-pi/
 but I don't want to reboot if the button is pressed accidentally
 The idea is that it won't do anything unless you hold the button for a while, like 4 seconds.
