@@ -12,8 +12,12 @@ There is probably a better way to do it with just GPIO event interrupt calls....
 physical configuration: <br />
 https://pinout.xyz/pinout/pin5_gpio3 <br />
 button pulling pin 5 low. <br />
-You won't be able to use I2C as pin 5 is I2C clock and I am using it to trigger the shutdown.  <br />
-You could instead use a second button to trigger shutdown... <br /> 
+You won't be able to use I2C as pin 5 is the I2C clock pin and I am using it to trigger shutdown.  <br />
+You could instead use a second button and any other input pin to trigger shutdown... <br /> 
 but pin 5 will wake the pi if the pi is off and you pull it to ground.<br />
 
 In my application, this code runs after reading the I2C Real Time Clock.
+the last lines in my /etc/rc.local now read:
+python /usr/local/bin/power-switch.py &
+exit 0
+
